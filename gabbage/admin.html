@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="/resources/assets/styles/style.css">
+  <style>
+	.sidenav{
+			width: 0;
+			height: 900px;
+			background-color: #120a8028;
+			overflow-x: hidden;
+			z-index: 1;
+			align-items: flex-start;
+			align-items: left;
+			transition: 0.5s;
+			top: 0px;
+			left: 0px;
+      overflow: hidden;
+		}
+	.sidenav a{
+			padding: 8px 8px 8px 32px;
+			color: white;
+			text-decoration: none;
+			display: block;
+			font-size: 18px;
+			float: left;
+			padding-left: 70px;
+			transition: 0.3s;
+	}
+	.sidenav a:hover{
+					color: white;
+		}
+	.sidenav .closebtn{
+		/* position: absolute; */
+		top: 0;
+		right:25px;
+		font-size: 20px;
+		margin-left: 57%;
+		}
+    .closebtn {
+      float: right;
+    }
+	.openbtn{
+		cursor: pointer;
+		font-size: 20px;
+		color: white;
+    transition: display 0.5m;
+		padding: 10px 15px;
+		border: none;
+		/* z-index: 2;	 */
+		}
+	.openbtn:hover{
+    transition: margin-top 0.5s;
+				/* background-color: #cecece; */
+		}
+	#main{
+				transition: margin-left 0.5s;
+				padding: 16px;
+        overflow: hidden;
+		}
+	@media screen and (max-height: 450px) {
+			.sidenav {padding-top: 15px;
+		}
+			.sidenav a {font-size: 18px;
+		}
+
+		}
+	 @media screen and (max-width: 650px) {
+			.closebtn {
+				/* margin-left: 0 !important */
+			}
+		}
+    .holders {
+      width: 70%;
+      /* float: right; */
+
+    }
+    .container>a {
+      display: block;
+    }
+    #main {
+      float: left;
+      /* position: absolute; */
+    }
+
+    .tab-content .container {
+      text-align: center;
+    }
+   
+    .text-area {
+      width: 40%;
+      margin: 1em;
+      float: left;
+      border-radius: 12px;
+    }
+
+    .upload-wrapper .upload {
+      font-size: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
+    .upload-wrapper {
+      margin-top: 4em;
+    position: relative;
+    overflow:hidden;
+    display: inline-block;
+  }
+
+  .upload-btn {
+    padding: 3em;
+    border-radius: 179px;
+    background: #120a8028;
+    font-weight: bold;
+  }
+  .input-group .btn {
+    margin: auto;
+  }
+  .input-group {
+    margin-top: 3em;
+  }
+  </style>
+</head>
+<body>
+<div class="jumbotron">
+  <div class="row">
+<div class="col-12 col-sm-4">
+    <div id="main">
+        <button class="openbtn btn btn-primary" onclick="openNav()">☰</button>
+      </div>
+      <div id="mySidenav" class="sidenav" align="center">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+          <i class="fa fa-backward" aria-hidden="true"></i>
+          <i class="fa fa-backspace    "></i>
+          </a>
+        <br><br><br>
+        <img align="center" class="Lancers" src="https://res.cloudinary.com/dcoqt2wpo/image/upload/v1570557507/Lancers_c8dpbb.png">
+        <br><br><br><br><br><br>
+        <div class="Inner">
+
+         </div>
+      </div>
+</div>
+      <div class="col-12 col-sm-8 holders">
+
+
+       
+
+
+            <div class="container mt-3">
+                <h2>Add Post</h2>
+                <br>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                  <li class="nav-item">
+                    
+                    <a class="nav-link active" data-toggle="tab" href="#image-post">
+                        <i class="fa fa-picture-o" aria-hidden="true"></i>
+                        Image/Text Post
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#audio-post">
+                        <i class="fa fa-file-audio-o" aria-hidden="true"></i>
+                        Add audio post 
+                      </a>
+                        
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#video-post">
+                        <i class="fa fa-video-camera" aria-hidden="true"></i>
+                        Add video post
+                    </a>
+                  </li>
+                </ul>
+              
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div id="image-post" class="container tab-pane active "><br>
+                    <form action="imagepost.php">
+                        <h1>Post a Message with image</h1>
+                        <textarea class=" text-area" name="text_box" id="" placeholder="Please input your text Here..." cols="30" rows="10" required></textarea>
+                        <div class="upload-wrapper">
+                          <button class="upload-btn btn">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                             file
+                          </button>
+                          <input class="upload" type="file" name="image" id="">
+                        </div>
+                        <div class="form-group input-group text-align-center">
+                            <input class="btn btn-primary" type="submit" name="post" value="Post">
+                        </div>
+                       
+                      </form>
+                  </div>
+                  <div id="audio-post" class="container tab-pane fade"><br>
+                    <form action="audiopost.php">
+                        <h1>Post an Audio Message</h1>
+                        <textarea class=" text-area" name="text_box" id="" placeholder="Please input your text Here..." cols="30" rows="10" required></textarea>
+                        <div class="upload-wrapper">
+                            <button class="upload-btn btn">
+                              <i class="fa fa-plus" aria-hidden="true"></i>
+                               file
+                            </button>
+                            <input class="upload" type="file" name="image" id="" required>
+                          </div>
+                       <div class="input-group"> 
+                         <input class="btn btn-primary" type="submit" name="post" value="Post">
+                        </div>
+                      </form>
+                  </div>
+                  <div id="video-post" class="container tab-pane fade"><br>
+                    <form action="imagepost.php">
+                        <h1>Post a Video Message </h1>
+                          <textarea class="text-area " name="text_box" id="" placeholder="Please input your text Here..." cols="30" rows="10" required></textarea>
+                        
+                          <div class="upload-wrapper">
+                              <button class="upload-btn btn">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                 file
+                              </button>
+                              <input class="upload" type="file" name="image" id="" required>
+                            </div>
+                        <div class="input-group">
+                            <input class="btn btn-primary" type="submit" name="post" value="Post">
+                        </div>
+                      </form>
+                  </div>
+                </div>
+              </div>
+              
+         
+
+
+          <!-- THE TAB CONTENTS HERE  -->
+          
+
+  </div>
+
+
+  <!-- FOR THE MAIN CONTENTS AND OTHERS  -->
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+
+
+      <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          // document.getElementById("main").style.marginLeft = "250px";
+          document.querySelector('.openbtn').style.display = "none";
+        }
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+          document.querySelector('.openbtn').style.display = "block";
+        }
+        openNav() ;
+      </script>
+</body>
+</html>
