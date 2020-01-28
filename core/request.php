@@ -11,7 +11,7 @@ class Request {
     //   parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH),  '/' )));
 
     return die(var_dump(
-      $_SERVER['REQUEST_URI']));
+      $_SERVER));
   
   }
   public static function method(){
