@@ -1,6 +1,6 @@
 <?php
 
-
+// for the database. do not remove 
 $database = require 'core/bootstrap.php';
 
 

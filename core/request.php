@@ -10,9 +10,10 @@ class Request {
 
     return trim(
       parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH),  '/' );
+      //  return die(var_dump($_SERVER));
   
   }
-  // return die(var_dump($_SERVER));
+ 
   public static function method(){
     return $_SERVER['REQUEST_METHOD'];
   }
