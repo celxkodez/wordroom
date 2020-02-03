@@ -45,16 +45,16 @@
                     </a>
                 </li>
                 <li class="nav-item <?php echo ($pageTitle == 'Video-Messages' ) ? 'active' : ' ' ?> ">
-                  <a class="nav-link" href="video-message">Video-Messages</a>
+                  <a class="nav-link" href="video-message.php">Video-Messages</a>
                 </li>
                 <li class="nav-item <?php echo ($pageTitle == 'Audio-Messages' ) ? 'active' : ' ' ?> ">
-                  <a class="nav-link" href="/audio-message">Audio-Messages</a>
+                  <a class="nav-link" href="/audio-message.php">Audio-Messages</a>
                 </li>
                 <li class="nav-item <?php echo ($pageTitle == 'Contact' ) ? 'active' : ' ' ?>">
-                  <a class="nav-link" href="/contact">Contact</a>
+                  <a class="nav-link" href="/contact.php">Contact</a>
                 </li>
                 <li class="nav-item <?php echo ($pageTitle == 'About' ) ? 'active' : ' ' ?>">
-                    <a class="nav-link" href="about">About</a>
+                    <a class="nav-link" href="about.php">About</a>
                   </li>
               </ul>
             </div>
