@@ -17,7 +17,7 @@ if(isset($_POST['login'])){
 $error = $_SESSION['user']['message'];
 if($_SESSION['user']['status']) {
  
-    header('Location:admin');
+    header('Location:admin.php');
     exit();
   } 
 require 'resources/views/admin/login.php';

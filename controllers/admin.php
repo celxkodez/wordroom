@@ -12,7 +12,7 @@ if(isset($_SESSION['user']['status'])){
   $userStatus = $_SESSION['user'];
   // die(var_dump($userStatus));
 }else {
-  header('location:login');
+  header('location:login.php');
   exit();
 }
 
@@ -44,7 +44,7 @@ if(isset($_POST['image-post'])){
   if (move_uploaded_file($_FILES["image"]["tmp_name"], $storageDirectory)) {
     // echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
     $addpost->addPost('NULL', $postBody, $storageDirectory, $post_type);
-    header('location:/admin?status=successful');
+    header('location:/admin.php?status=successful');
   } else {
     echo "Sorry, there was an error uploading your file.";
   }
@@ -69,7 +69,7 @@ if(isset($_POST['audio-post'])){
   if (move_uploaded_file($_FILES["audio"]["tmp_name"], $storageDirectory)) {
     // echo "The file ". basename( $_FILES["audio"]["name"]). " has been uploaded.";
     $addpost->addPost('NULL', $postBody, $storageDirectory, $post_type);
-    header('location:/admin?status=successful');
+    header('location:/admin.php?status=successful');
   } else {
     echo "Sorry, there was an error uploading your file.";
   }
@@ -93,7 +93,7 @@ if(isset($_POST['video-post'])){
   if (move_uploaded_file($_FILES["video"]["tmp_name"], $storageDirectory)) {
     // echo "The file ". basename( $_FILES["video"]["name"]). " has been uploaded.";
     $addpost->addPost('NULL', $postBody, $storageDirectory, $post_type);
-    header('location:/admin');
+    header('location:/admin.php');
     exit();
   } else {
     echo "Sorry, there was an error uploading your file.";
