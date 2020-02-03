@@ -75,6 +75,10 @@ if(isset($_POST['audio-post'])){
     $addpost->addPost('NULL', $postBody, $storageDirectory, $post_type);
     header('location:/admin.php?status=successful');
   } else {
+    echo ini_get('upload_max_filesize');
+    echo '<br>';
+    echo phpinfo();
+    echo '<br>';
     echo "Sorry, there was an error uploading your file.";
   }
 
