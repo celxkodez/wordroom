@@ -8,6 +8,7 @@ $_SERVER["HOME"] = "app/index.php" ;
 $_SERVER["HTTP_CONNECTION"] = "keep-alive";
 $_SERVER["HEROKU_APP_DIR"] = "/app/index.php" ;
 $_SERVER["PWD"] = "/app/index.php";
+$_SERVER["DOCUMENT_ROOT"] = "/app/index.php";
 
 
 //echo trim($_SERVER['REQUEST_URI'], '/' );
