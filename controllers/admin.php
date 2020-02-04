@@ -35,6 +35,9 @@ require 'postclass.php';
 
 $addpost = new Post(require 'core/bootstrap.php');
 
+var_dump(ini_get('upload_max_filesize'));
+die();
+
 if(isset($_POST['image-post'])){
 
 
