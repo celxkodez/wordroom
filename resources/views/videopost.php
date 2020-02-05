@@ -39,36 +39,24 @@
 
 
 
-        <?php foreach($allPost as $post)   : ?>
+        <?php foreach($videoPost as $post)   : ?>
 
-<div class="container">
-
-  <?php if($post->post_type == 'text') : ?>
-    <div class="media-container">
-        <img src="<?= $post->media_url; ?>" alt="">
-
-    </div>
-
-  <?php endif ; ?>
+        <div class="container">
 
 
-  <div class="text-content">
-    <p>
-       <?php echo $post->body; ?>
-    </p>
+
+
+          <div class="text-content">
+            <p>
+              <?php echo $post->body; ?>
+            </p>
 
 
     
-    <?php if($post->post_type == 'audio') : ?>
-      <a class="btn btn-primary" href="?download_file=<?=$post->media_url?>">
-        download audio message
-      </a>
-    <?php endif ; ?>
-    <?php if($post->post_type == 'video') : ?>
+
       <a class="btn btn-primary" href="?download_file=<?=$post->media_url?>">
         download video message
       </a>
-    <?php endif ; ?>
     
     <div class="others">
       <span class="reactions">

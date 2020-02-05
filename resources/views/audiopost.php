@@ -18,9 +18,7 @@ include('reuseable/header.php');
                       <a href="">Older - Newer Post</a>
                       <hr>
                       <a href="">Newer - Older Post</a>
-                  </div>
-                  <hr>
-                  <a href=""><h5>Text Post only</h5></a>        
+                  </div> 
                 </aside>
       
           </div>
@@ -35,34 +33,34 @@ include('reuseable/header.php');
 
 
               <!-- AUDIO POST HERE -->
-            
-              <div class="container">
-                  <div class="media-container">
-                    <audio src="../../public/audios/royalty.mp3"></audio>
-              
-                  </div>
-                  <div class="text-content">
+
+
+
+        <?php foreach($audioPost as $post)   : ?>
+
+            <div class="container">
+
+              <div class="text-content">
                     <p>
-                        text in here describing the post or sort of 
-                        text either related to the post or not but made by the admin.
-                        * i should create more pages like a readmore pages linked to the post if its made 
-                        with large number of text contexnts or so.
-                        media download can be handled here
+                      <?php echo $post->body; ?>
                     </p>
-              
+
+                    <a class="btn btn-primary" href="?download_file=<?=$post->media_url?>">
+                      download audio message
+                    </a>
+
                     <div class="others">
                       <span class="reactions">
                         <span>0</span>
                         <i class="fa fa-thumbs-up" aria-hidden="true"></i>
                         <span>0</span>
                         <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                        </span>
+
+                        <span class="posted-info float-right">
+                        posted: <?= $post->created_at ; ?>
                       </span>
-              
-                      <span class="posted-info float-right">posted: 01/01/2020</span>
                     </div>
-                  </div>
-              
-              
                 </div>
 
 
@@ -71,7 +69,9 @@ include('reuseable/header.php');
 
 
 
-          <!-- ----------------------------------------------------------- -->
+              </div>
+              
+        <?php endforeach; ?>
         </div>
   </div>
 </div>
