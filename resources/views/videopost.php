@@ -21,8 +21,8 @@
                       <hr>
                       <a href="">Newer - Older Post</a>
                   </div>
-                  <hr>
-                  <a href=""><h5>Text Post only</h5></a>        
+                  <!-- <hr>
+                  <a href=""><h5>Text Post only</h5></a>         -->
                 </aside>
       
           </div>
@@ -35,9 +35,73 @@
         <!-- THE MAIN POST SECTION -->
         <div class="post-container col-md-6 col-12">
 
+
+
+
+
+        <?php foreach($allPost as $post)   : ?>
+
+<div class="container">
+
+  <?php if($post->post_type == 'text') : ?>
+    <div class="media-container">
+        <img src="<?= $post->media_url; ?>" alt="">
+
+    </div>
+
+  <?php endif ; ?>
+
+
+  <div class="text-content">
+    <p>
+       <?php echo $post->body; ?>
+    </p>
+
+
+    
+    <?php if($post->post_type == 'audio') : ?>
+      <a class="btn btn-primary" href="?download_file=<?=$post->media_url?>">
+        download audio message
+      </a>
+    <?php endif ; ?>
+    <?php if($post->post_type == 'video') : ?>
+      <a class="btn btn-primary" href="?download_file=<?=$post->media_url?>">
+        download video message
+      </a>
+    <?php endif ; ?>
+    
+    <div class="others">
+      <span class="reactions">
+        <span>0</span>
+        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+        <span>0</span>
+        <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+      </span>
+
+      <span class="posted-info float-right">
+        posted: <?= $post->created_at ; ?>
+      </span>
+    </div>
+
+
+
+  </div>
+
+    
+
+
+
+
+
+</div>
+
+
+
+<?php endforeach; ?>
+
          
                 <!-- VIDEO POST HERE -->
-                <div class="container">
+                <!-- <div class="container">
                     <div class="media-container">
                       <video src="../../public/videos/videoplayback.mp4"></video>
                 
@@ -60,12 +124,12 @@
                         </span>
                 
                         <span class="posted-info float-right">posted: 01/01/2020</span>
-                      </div>
+                      </div> -->
                     </div>
                 
                 
                   </div>
-          </div>
+          <!-- </div>s -->
 
 
           <!-- ----------------------------------------------------------- -->
