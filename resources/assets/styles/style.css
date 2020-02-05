@@ -1,6 +1,9 @@
 * {
   font-family: ubuntu; }
 
+p {
+  overflow-wrap: break-word; }
+
 .mainbg {
   background: #2a0c94;
   padding-top: 12px;

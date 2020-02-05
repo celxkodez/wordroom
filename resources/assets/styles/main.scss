@@ -6,6 +6,9 @@ $primary_color: #2a0c94;
 * {
   font-family: ubuntu;
 }
+p {
+  overflow-wrap: break-word;
+}
 .mainbg {
   background: $primary_color;
   padding-top: 12px;
