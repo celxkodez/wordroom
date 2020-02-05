@@ -1,4 +1,8 @@
 <?php
+ini_set('upload_max_filesize', '100M');
+ini_set('post_max_size', '10M');
+ini_set('max_input_time', 3000);
+ini_set('max_execution_time', 3000);
 
 require 'core/auth/auth.php';
 
@@ -30,6 +34,7 @@ if(isset($_POST['logout'])){
 require 'postclass.php';
 
 $addpost = new Post(require 'core/bootstrap.php');
+
 
 if(isset($_POST['image-post'])){
 
@@ -63,17 +68,37 @@ if(isset($_POST['audio-post'])){
   $post_type = 'audio';
   // header('location:/admin?status=successful');
   // die();
+  // ini_set('upload_max_filesize', '100M');
+  // ini_set('post_max_size', '10M');
+  // ini_set('max_input_time', 3000);
+  // ini_set('max_execution_time', 3000);
   //image
 
 // $addpost->addPost('post title', 'message body herer', 'url and here');
   if (move_uploaded_file($_FILES["audio"]["tmp_name"], $storageDirectory)) {
     // echo "The file ". basename( $_FILES["audio"]["name"]). " has been uploaded.";
     $addpost->addPost('NULL', $postBody, $storageDirectory, $post_type);
+
+
     header('location:/admin?status=successful');
   } else {
+    echo ini_get('upload_max_filesize');
+    echo '<br>';
     echo "Sorry, there was an error uploading your file.";
   }
 
+//   try {
+//     move_uploaded_file($_FILES["audio"]["tmp_name"], $storageDirectory);
+//       // echo "The file ". basename( $_FILES["audio"]["name"]). " has been uploaded.";
+//       // $addpost->addPost('NULL', $postBody, $storageDirectory, $post_type);
+  
+  
+//       header('location:/admin?status=successful');
+    
+
+// } catch ( Exception $e) {
+//   die($e);
+// }
 }
 
 
@@ -86,7 +111,7 @@ if(isset($_POST['video-post'])){
 
   $post_type = 'video';
 
-  die(var_dump($storageDirectory));
+  // die(var_dump($storageDirectory));
 
   // die(var_dump($_FILES["video"]));
 // $addpost->addPost('post title', 'message body herer', 'url and here');
