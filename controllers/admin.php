@@ -6,9 +6,6 @@ ini_set('max_execution_time', 3000);
 
 require 'core/auth/auth.php';
 
-
-// die(var_dump(($_SERVER)));
-
 // if user have session is stated and user has a 
 // valid session, it returns admin panel
 session_start();
@@ -101,7 +98,6 @@ if(isset($_POST['video-post'])){
 
   $post_type = 'video';
 
-  die(var_dump($storageDirectory));
 
   // die(var_dump($_FILES["video"]));
 // $addpost->addPost('post title', 'message body herer', 'url and here');
